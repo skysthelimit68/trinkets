@@ -2,7 +2,10 @@ import React from "react";
 
 const ItemShipping = props => {
     return(
-        <div></div>
+        <div>
+        <p className="item-description">{props.item.shipping}</p>
+
+    </div>
     )
 }
 

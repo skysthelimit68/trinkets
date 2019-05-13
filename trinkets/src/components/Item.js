@@ -5,12 +5,11 @@ import ItemDescription from "./ItemDescription";
 import ItemShipping from "./ItemShipping"
 
 class Item extends React.Component {
-    constructor() {
-        super();
-        this.state={
+    
+        state={
             item: null
         }
-    }
+    
     
     componentDidMount() {
         axios
@@ -31,21 +30,22 @@ class Item extends React.Component {
         return (
             <div className="item-wrapper">
                 <div className="item-header">
-                    <div className="img-wrapper">
+                    <div className="image-wrapper">
                         <img
                             src={this.state.item.imageUrl}
                             alt={this.state.item.name}
                         />
                     </div>
-                    <div classname="item-title-wrapper">
+                    <div className="item-title-wrapper">
                         <h2>{this.state.item.name}</h2>
                         <h4>{this.state.item.price}</h4>
                     </div>
-                    <div className="item-sub-nav">
-                        <NavLink exact to={`/itemById/${this.state.item.id}`}>the story</NavLink>
-                        <NavLink to={`/itemById/${this.state.item.id}/shipping`}>shipping</NavLink>
-                    </div>
                 </div>
+                <nav className="item-sub-nav">
+                    <NavLink exact to={`/itemById/${this.state.item.id}`}>the story</NavLink>
+                    <NavLink to={`/itemById/${this.state.item.id}/shipping`}>shipping</NavLink>
+                </nav>
+                
 
             <Route 
                 exact
