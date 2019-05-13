@@ -6,10 +6,9 @@ import ItemShipping from "./ItemShipping"
 
 class Item extends React.Component {
     
-        state={
-            item: null
-        }
-    
+    state = {
+        item: null
+    }
     
     componentDidMount() {
         axios
